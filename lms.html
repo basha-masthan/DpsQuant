@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DpsQuant LMS - Learning Management System</title>
+  <link rel="stylesheet" href="/css/lms.css" />
+</head>
+<body>
+  <!-- ========== Top Nav ========== -->
+  <header class="nav">
+    <div class="nav__inner">
+      <button class="nav__menu" id="openDrawer" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="brand">
+        <div class="brand__logo">DpsQuant</div>
+        <div class="brand__text">
+          <strong>LMS Portal</strong>
+          <small>Learning Management System</small>
+        </div>
+      </div>
+      <nav class="nav__links">
+        <a href="#hero">Home</a>
+        <a href="#courses">Courses</a>
+        <a href="#announcements">Events</a>
+        <a href="#stats">Placements</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav__actions">
+        <a href="/" class="exit-icon" aria-label="Exit to home" title="Exit to home">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 12L5 10M5 10L12 3L19 10M5 10V20C5 20.5523 5.44772 21 6 21H9M19 10L21 12M19 10V20C19 20.5523 18.5523 21 18 21H15M9 21C9.55228 21 10 20.5523 10 20V16C10 15.4477 10.4477 15 11 15H13C13.5523 15 14 15.4477 14 16V20C14 20.5523 14.4477 21 15 21M9 21H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <button class="btn btn--ghost" id="loginBtn">Student Login</button>
+        <button class="btn btn--primary">Admin</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <aside class="drawer" id="drawer">
+    <div class="drawer__header">
+      <div class="brand brand--drawer">
+        <div class="brand__logo">DpsQuant</div>
+        <div class="brand__text">
+          <strong>LMS Portal</strong>
+          <small>Learning Management System</small>
+        </div>
+      </div>
+      <button id="closeDrawer" class="drawer__close" aria-label="Close menu">×</button>
+    </div>
+    <a href="#hero" class="drawer__link">Home</a>
+    <a href="#courses" class="drawer__link">Courses</a>
+    <a href="#announcements" class="drawer__link">Events</a>
+    <a href="#stats" class="drawer__link">Placements</a>
+    <a href="#faq" class="drawer__link">FAQ</a>
+    <div class="drawer__footer">
+      <button class="btn btn--ghost w-100" id="loginBtnDrawer">Student Login</button>
+      <button class="btn btn--primary w-100 mt-8">Admin</button>
+    </div>
+  </aside>
+  <div class="drawer__backdrop" id="drawerBackdrop"></div>
+
+  <!-- ========== Hero ========== -->
+  <section id="hero" class="hero reveal">
+    <div class="hero__bg"></div>
+    <div class="container hero__grid">
+      <div class="hero__content">
+        <h1>Level up your <span class="grad">career skills</span> & get placed faster.</h1>
+        <p class="muted">
+          Structured modules for Aptitude, Coding, Communication, and Mock Interviews — all in one comprehensive LMS.
+        </p>
+        <div class="hero__actions">
+          <a href="#courses" class="btn btn--primary">Explore Courses</a>
+          <a href="#announcements" class="btn btn--ghost">Upcoming Sessions</a>
+        </div>
+        <ul class="hero__highlights">
+          <li>📈 Guided Learning Paths</li>
+          <li>🧠 Technical & Aptitude Training</li>
+          <li>🎤 Mock Interviews & Communication</li>
+          <li>🎯 Company-Specific Preparation</li>
+        </ul>
+      </div>
+      <div class="hero__card">
+        <div class="card">
+          <div class="card__head">
+            <h3>Your Learning Snapshot</h3>
+            <span class="badge">Student</span>
+          </div>
+          <div class="progress">
+            <div class="progress__label">
+              <span>Total Progress</span>
+              <span id="totalProgressLabel">0%</span>
+            </div>
+            <div class="progress__bar"><span id="totalProgressBar" style="width: 0%"></span></div>
+          </div>
+          <ul class="mini-list" id="snapshotList">
+            <!-- Populated by JS -->
+          </ul>
+          <button class="btn btn--ghost w-100 mt-12" id="loginBtnCard">Sign in to Continue</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Course Filters ========== -->
+  <section class="filters container reveal">
+    <div class="filters__inner">
+      <input id="searchInput" type="search" class="input" placeholder="Search course, topic, company…" />
+      <div class="chip-group" id="levelChips">
+        <button class="chip chip--active" data-level="all">All</button>
+        <button class="chip" data-level="beginner">Beginner</button>
+        <button class="chip" data-level="intermediate">Intermediate</button>
+        <button class="chip" data-level="advanced">Advanced</button>
+      </div>
+      <div class="select">
+        <select id="sortSelect" aria-label="Sort courses">
+          <option value="recommended">Recommended</option>
+          <option value="new">Newest</option>
+          <option value="progress">By Progress</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Courses Grid ========== -->
+  <section id="courses" class="container reveal">
+    <div class="section-head">
+      <h2>Courses & Learning Tracks</h2>
+      <p class="muted">Comprehensive modules designed to prepare you for campus and off-campus placements.</p>
+    </div>
+    <div id="courseGrid" class="grid">
+      <!-- Populated by JS -->
+    </div>
+  </section>
+
+  <!-- ========== Announcements / Events ========== -->
+  <section id="announcements" class="container reveal">
+    <div class="section-head">
+      <h2>Announcements & Upcoming Sessions</h2>
+      <p class="muted">Stay updated with live classes, practice tests, and company-specific preparation sessions.</p>
+    </div>
+    <div class="timeline" id="timeline">
+      <!-- Populated by JS -->
+    </div>
+  </section>
+
+  <!-- ========== Stats ========== -->
+  <section id="stats" class="stats reveal">
+    <div class="container stats__grid">
+      <div class="stat">
+        <div class="stat__num" data-count="50+">0</div>
+        <div class="stat__label">Partner Companies</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num" data-count="5,000+">0</div>
+        <div class="stat__label">Students Trained</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num" data-count="95%">0</div>
+        <div class="stat__label">Placement Success</div>
+      </div>
+      <div class="stat">
+        <div class="stat__num" data-count="4.9/5">0</div>
+        <div class="stat__label">Student Satisfaction</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FAQ ========== -->
+  <section id="faq" class="container reveal">
+    <div class="section-head">
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div class="accordion" id="faqAcc">
+      <details>
+        <summary>How do I enroll in a course?</summary>
+        <p>Use “Explore Courses” → pick a course → click Enroll. After login, it appears on your dashboard with progress tracking.</p>
+      </details>
+      <details>
+        <summary>Will I get placement assistance?</summary>
+        <p>Yes. You’ll get company-wise practice sets, resume reviews, and mock interviews with feedback.</p>
+      </details>
+      <details>
+        <summary>Are classes live or recorded?</summary>
+        <p>Both. Live sessions are scheduled weekly; recordings are available in the LMS within 24 hours.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ========== Footer ========== -->
+  <footer class="footer reveal">
+    <div class="container footer__grid">
+      <div>
+        <div class="brand">
+          <div class="brand__logo">DpsQuant</div>
+          <div class="brand__text">
+            <strong>LMS Portal</strong>
+            <small>Learning Management System</small>
+          </div>
+        </div>
+        <p class="muted mt-8">© <span id="year"></span> DpsQuant Pvt Ltd. All rights reserved.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="list">
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#announcements">Sessions</a></li>
+          <li><a href="#stats">Placements</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in Touch</h4>
+        <ul class="list">
+          <li>support@yourcrt.in</li>
+          <li>+91 90000 00000</li>
+          <li>Hyderabad, IN</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== Login Modal ========== -->
+  <div class="modal" id="loginModal" aria-hidden="true">
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+      <button class="modal__close" id="closeLogin" aria-label="Close login">×</button>
+      <h3 id="loginTitle">Student Login</h3>
+      <p class="muted">Access your personalized learning dashboard and track your progress.</p>
+      <form class="form" id="loginForm">
+        <label>Email
+          <input type="email" class="input" placeholder="you@example.com" required />
+        </label>
+        <label>Password
+          <input type="password" class="input" placeholder="••••••••" required />
+        </label>
+        <button class="btn btn--primary w-100" type="submit">Login</button>
+        <button class="btn btn--ghost w-100 mt-8" type="button">Create Account</button>
+      </form>
+    </div>
+  </div>
+  <div class="modal__backdrop" id="loginBackdrop"></div>
+
+  <script src="js/lms.js"></script>
+</body>
+</html>

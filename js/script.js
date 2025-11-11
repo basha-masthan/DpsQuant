@@ -325,11 +325,155 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(nextTestimonial, 5000);
         showTestimonial(currentIndex);
     }
+// Initialize testimonial slider
+initTestimonialSlider();
 
-    // Initialize testimonial slider
-    initTestimonialSlider();
+// Modal functionality for LMS course registration
+const modal = document.getElementById('registrationModal');
+const modalClose = document.querySelector('.modal-close');
+const enrollButtons = document.querySelectorAll('.enroll-btn');
 
-    // Enhanced back to top button with animations
+// Function to open modal
+function openModal(courseName) {
+    document.getElementById('regCourse').value = courseName;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+
+    // Reset form when opening
+    const form = document.getElementById('registrationForm');
+    if (form) {
+        form.reset();
+    }
+}
+
+// Function to close modal
+function closeModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto'; // Restore scrolling
+}
+
+// Open modal when enroll button is clicked
+enrollButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        const courseName = this.getAttribute('data-course');
+        openModal(courseName);
+    });
+});
+
+// Close modal when close button is clicked
+modalClose.addEventListener('click', closeModal);
+
+// Close modal when clicking outside
+modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+        closeModal();
+    }
+});
+
+// Close modal on escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closeModal();
+    }
+});
+
+// Course Registration Form Handling with EmailJS
+const registrationForm = document.getElementById('registrationForm');
+if (registrationForm) {
+    // Initialize EmailJS
+    emailjs.init('7SV2Z2LgC1GENjNY_');
+
+    registrationForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const btnText = submitBtn.querySelector('.btn-text');
+        const btnLoading = submitBtn.querySelector('.btn-loading');
+
+        // Get form data
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData);
+
+        // Validation
+        if (!data.name || !data.email || !data.phone || !data.course || !data.college || !data.state || !data.city) {
+            alert('Please fill in all required fields.');
+            return;
+        }
+
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(data.email)) {
+            alert('Please enter a valid email address.');
+            return;
+        }
+
+        // Phone validation (basic)
+        const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
+        if (!phoneRegex.test(data.phone.replace(/[\s\-\(\)]/g, ''))) {
+            alert('Please enter a valid phone number.');
+            return;
+        }
+
+        // Prepare message with user details
+        const message = `
+Course Registration Details:
+
+Name: ${data.name}
+Email: ${data.email}
+Phone: ${data.phone}
+Course: ${data.course}
+
+User Information:
+College: ${data.college}
+State: ${data.state}
+City: ${data.city}
+Address: ${data.address || 'Not provided'}
+
+Additional Information: ${data.message || 'None provided'}
+        `;
+
+        // Update form data with formatted message
+        const updatedFormData = new FormData();
+        updatedFormData.append('name', data.name);
+        updatedFormData.append('email', data.email);
+        updatedFormData.append('phone', data.phone);
+        updatedFormData.append('subject', data.course);
+        updatedFormData.append('message', message);
+
+        // Show loading state
+        btnText.style.display = 'none';
+        btnLoading.style.display = 'flex';
+        submitBtn.disabled = true;
+
+        // Send email using EmailJS
+        emailjs.sendForm('service_ifj3zce', 'template_vu8msan', this)
+            .then(() => {
+                // Reset loading state
+                btnText.style.display = 'inline';
+                btnLoading.style.display = 'none';
+                submitBtn.disabled = false;
+
+                // Success message
+                alert('Thank you for registering! We will contact you within 24 hours with course details.');
+
+                // Reset form and close modal
+                registrationForm.reset();
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }, (err) => {
+                // Reset loading state
+                btnText.style.display = 'inline';
+                btnLoading.style.display = 'none';
+                submitBtn.disabled = false;
+
+                // Error message
+                alert('Sorry, there was an error processing your registration. Please try again later or contact us directly.');
+                console.error('EmailJS Error:', err);
+            });
+    });
+}
+
+// Enhanced back to top button with animations
     const backToTopButton = document.createElement('button');
     backToTopButton.innerHTML = '<i class="fas fa-arrow-up"></i>';
     backToTopButton.className = 'back-to-top';
