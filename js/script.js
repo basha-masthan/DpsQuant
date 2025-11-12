@@ -648,7 +648,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Scroll-triggered Card Animations
 document.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('.overview-card, .service-card, .mission-card, .vision-card, .apart-item, .faq-item');
+    // Exclude overview cards from floating animation on LMS page
+    const isLMSPage = document.title.includes('LMS');
+    let cardSelector = '.service-card, .mission-card, .vision-card, .apart-item, .faq-item';
+
+    if (!isLMSPage) {
+        cardSelector = '.overview-card, ' + cardSelector;
+    }
+
+    const cards = document.querySelectorAll(cardSelector);
 
     const cardObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry, index) => {

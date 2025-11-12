@@ -335,92 +335,126 @@ p {
     }
 }
 
+/* Scroll-triggered animations */
 .animate-fade-in {
-    animation: fadeIn 1s ease-out;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-fade-in.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .animate-fade-in-delay {
-    animation: fadeIn 1s ease-out 0.3s both;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
+}
+
+.animate-fade-in-delay.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .animate-fade-in-delay-2 {
-    animation: fadeIn 1s ease-out 0.6s both;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.6s;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.animate-fade-in-delay-2.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .animate-slide-up {
-    animation: slideUp 0.8s ease-out;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-slide-up.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .animate-slide-up-delay {
-    animation: slideUp 0.8s ease-out 0.2s both;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
+}
+
+.animate-slide-up-delay.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .animate-slide-up-delay-2 {
-    animation: slideUp 0.8s ease-out 0.4s both;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
+}
+
+.animate-slide-up-delay-2.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .animate-slide-up-delay-3 {
-    animation: slideUp 0.8s ease-out 0.6s both;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.6s;
+}
+
+.animate-slide-up-delay-3.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .animate-slide-up-delay-4 {
-    animation: slideUp 0.8s ease-out 0.8s both;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.8s;
+}
+
+.animate-slide-up-delay-4.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .animate-slide-up-delay-5 {
-    animation: slideUp 0.8s ease-out 1s both;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s;
 }
 
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.animate-slide-up-delay-5.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .animate-slide-left {
-    animation: slideLeft 0.8s ease-out;
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-slide-left.animate {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .animate-slide-right {
-    animation: slideRight 0.8s ease-out;
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-@keyframes slideLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideRight {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+.animate-slide-right.animate {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 /* Section Headers */
@@ -440,7 +474,8 @@ p {
 
 .section-description {
     font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.8);
+    /* color: black; */
+    color: #ffffff ;
     max-width: 600px;
     margin: 0 auto;
 }
@@ -473,6 +508,7 @@ p {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     margin-top: 3rem;
+    margin-bottom: 10px;
     position: relative;
     z-index: 2;
     justify-items: center;
@@ -955,8 +991,9 @@ p {
     overflow: hidden;
 }
 
-.sets-apart h2{
-    color: white;
+.sets-apart h2,
+.sets-apart .section-description {
+    color: white !important;
 }
 
 .sets-apart::before {
@@ -4413,3 +4450,4 @@ p {
     line-height: 1.4;
     margin-bottom: 10px;
 }
+

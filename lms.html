@@ -1,248 +1,306 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DpsQuant LMS - Learning Management System</title>
-  <link rel="stylesheet" href="/css/lms.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DpsQuant LMS - Learning Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <!-- ========== Top Nav ========== -->
-  <header class="nav">
-    <div class="nav__inner">
-      <button class="nav__menu" id="openDrawer" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
-      <div class="brand">
-        <div class="brand__logo">DpsQuant</div>
-        <div class="brand__text">
-          <strong>LMS Portal</strong>
-          <small>Learning Management System</small>
-        </div>
-      </div>
-      <nav class="nav__links">
-        <a href="#hero">Home</a>
-        <a href="#courses">Courses</a>
-        <a href="#announcements">Events</a>
-        <a href="#stats">Placements</a>
-        <a href="#faq">FAQ</a>
-      </nav>
-      <div class="nav__actions">
-        <a href="/" class="exit-icon" aria-label="Exit to home" title="Exit to home">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 12L5 10M5 10L12 3L19 10M5 10V20C5 20.5523 5.44772 21 6 21H9M19 10L21 12M19 10V20C19 20.5523 18.5523 21 18 21H15M9 21C9.55228 21 10 20.5523 10 20V16C10 15.4477 10.4477 15 11 15H13C13.5523 15 14 15.4477 14 16V20C14 20.5523 14.4477 21 15 21M9 21H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-        <button class="btn btn--ghost" id="loginBtn">Student Login</button>
-        <button class="btn btn--primary">Admin</button>
-      </div>
-    </div>
-  </header>
-
-  <!-- Mobile Drawer -->
-  <aside class="drawer" id="drawer">
-    <div class="drawer__header">
-      <div class="brand brand--drawer">
-        <div class="brand__logo">DpsQuant</div>
-        <div class="brand__text">
-          <strong>LMS Portal</strong>
-          <small>Learning Management System</small>
-        </div>
-      </div>
-      <button id="closeDrawer" class="drawer__close" aria-label="Close menu">×</button>
-    </div>
-    <a href="#hero" class="drawer__link">Home</a>
-    <a href="#courses" class="drawer__link">Courses</a>
-    <a href="#announcements" class="drawer__link">Events</a>
-    <a href="#stats" class="drawer__link">Placements</a>
-    <a href="#faq" class="drawer__link">FAQ</a>
-    <div class="drawer__footer">
-      <button class="btn btn--ghost w-100" id="loginBtnDrawer">Student Login</button>
-      <button class="btn btn--primary w-100 mt-8">Admin</button>
-    </div>
-  </aside>
-  <div class="drawer__backdrop" id="drawerBackdrop"></div>
-
-  <!-- ========== Hero ========== -->
-  <section id="hero" class="hero reveal">
-    <div class="hero__bg"></div>
-    <div class="container hero__grid">
-      <div class="hero__content">
-        <h1>Level up your <span class="grad">career skills</span> & get placed faster.</h1>
-        <p class="muted">
-          Structured modules for Aptitude, Coding, Communication, and Mock Interviews — all in one comprehensive LMS.
-        </p>
-        <div class="hero__actions">
-          <a href="#courses" class="btn btn--primary">Explore Courses</a>
-          <a href="#announcements" class="btn btn--ghost">Upcoming Sessions</a>
-        </div>
-        <ul class="hero__highlights">
-          <li>📈 Guided Learning Paths</li>
-          <li>🧠 Technical & Aptitude Training</li>
-          <li>🎤 Mock Interviews & Communication</li>
-          <li>🎯 Company-Specific Preparation</li>
-        </ul>
-      </div>
-      <div class="hero__card">
-        <div class="card">
-          <div class="card__head">
-            <h3>Your Learning Snapshot</h3>
-            <span class="badge">Student</span>
-          </div>
-          <div class="progress">
-            <div class="progress__label">
-              <span>Total Progress</span>
-              <span id="totalProgressLabel">0%</span>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">DpsQuant</a>
             </div>
-            <div class="progress__bar"><span id="totalProgressBar" style="width: 0%"></span></div>
-          </div>
-          <ul class="mini-list" id="snapshotList">
-            <!-- Populated by JS -->
-          </ul>
-          <button class="btn btn--ghost w-100 mt-12" id="loginBtnCard">Sign in to Continue</button>
+            <div class="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="lms.html" class="active">LMS</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </nav>
 
-  <!-- ========== Course Filters ========== -->
-  <section class="filters container reveal">
-    <div class="filters__inner">
-      <input id="searchInput" type="search" class="input" placeholder="Search course, topic, company…" />
-      <div class="chip-group" id="levelChips">
-        <button class="chip chip--active" data-level="all">All</button>
-        <button class="chip" data-level="beginner">Beginner</button>
-        <button class="chip" data-level="intermediate">Intermediate</button>
-        <button class="chip" data-level="advanced">Advanced</button>
-      </div>
-      <div class="select">
-        <select id="sortSelect" aria-label="Sort courses">
-          <option value="recommended">Recommended</option>
-          <option value="new">Newest</option>
-          <option value="progress">By Progress</option>
-        </select>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== Courses Grid ========== -->
-  <section id="courses" class="container reveal">
-    <div class="section-head">
-      <h2>Courses & Learning Tracks</h2>
-      <p class="muted">Comprehensive modules designed to prepare you for campus and off-campus placements.</p>
-    </div>
-    <div id="courseGrid" class="grid">
-      <!-- Populated by JS -->
-    </div>
-  </section>
-
-  <!-- ========== Announcements / Events ========== -->
-  <section id="announcements" class="container reveal">
-    <div class="section-head">
-      <h2>Announcements & Upcoming Sessions</h2>
-      <p class="muted">Stay updated with live classes, practice tests, and company-specific preparation sessions.</p>
-    </div>
-    <div class="timeline" id="timeline">
-      <!-- Populated by JS -->
-    </div>
-  </section>
-
-  <!-- ========== Stats ========== -->
-  <section id="stats" class="stats reveal">
-    <div class="container stats__grid">
-      <div class="stat">
-        <div class="stat__num" data-count="50+">0</div>
-        <div class="stat__label">Partner Companies</div>
-      </div>
-      <div class="stat">
-        <div class="stat__num" data-count="5,000+">0</div>
-        <div class="stat__label">Students Trained</div>
-      </div>
-      <div class="stat">
-        <div class="stat__num" data-count="95%">0</div>
-        <div class="stat__label">Placement Success</div>
-      </div>
-      <div class="stat">
-        <div class="stat__num" data-count="4.9/5">0</div>
-        <div class="stat__label">Student Satisfaction</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== FAQ ========== -->
-  <section id="faq" class="container reveal">
-    <div class="section-head">
-      <h2>Frequently Asked Questions</h2>
-    </div>
-    <div class="accordion" id="faqAcc">
-      <details>
-        <summary>How do I enroll in a course?</summary>
-        <p>Use “Explore Courses” → pick a course → click Enroll. After login, it appears on your dashboard with progress tracking.</p>
-      </details>
-      <details>
-        <summary>Will I get placement assistance?</summary>
-        <p>Yes. You’ll get company-wise practice sets, resume reviews, and mock interviews with feedback.</p>
-      </details>
-      <details>
-        <summary>Are classes live or recorded?</summary>
-        <p>Both. Live sessions are scheduled weekly; recordings are available in the LMS within 24 hours.</p>
-      </details>
-    </div>
-  </section>
-
-  <!-- ========== Footer ========== -->
-  <footer class="footer reveal">
-    <div class="container footer__grid">
-      <div>
-        <div class="brand">
-          <div class="brand__logo">DpsQuant</div>
-          <div class="brand__text">
-            <strong>LMS Portal</strong>
-            <small>Learning Management System</small>
-          </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h2 class="hero-title">Transform Your Career with DpsQuant</h2>
+                <p class="hero-subtitle">Premier Campus Recruitment Training (CRT) center providing comprehensive career guidance, technical training, and placement assistance to help students succeed in competitive job markets.</p>
+                <div class="hero-buttons animate-fade-in-delay-2">
+                    <a href="#courses" class="btn btn-primary">Explore Our Programs</a>
+                    <a href="#features" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-illustration">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+            </div>
         </div>
-        <p class="muted mt-8">© <span id="year"></span> DpsQuant Pvt Ltd. All rights reserved.</p>
-      </div>
-      <div>
-        <h4>Quick Links</h4>
-        <ul class="list">
-          <li><a href="#courses">Courses</a></li>
-          <li><a href="#announcements">Sessions</a></li>
-          <li><a href="#stats">Placements</a></li>
-          <li><a href="#faq">FAQ</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Get in Touch</h4>
-        <ul class="list">
-          <li>support@yourcrt.in</li>
-          <li>+91 90000 00000</li>
-          <li>Hyderabad, IN</li>
-        </ul>
-      </div>
-    </div>
-  </footer>
+    </section>
 
-  <!-- ========== Login Modal ========== -->
-  <div class="modal" id="loginModal" aria-hidden="true">
-    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
-      <button class="modal__close" id="closeLogin" aria-label="Close login">×</button>
-      <h3 id="loginTitle">Student Login</h3>
-      <p class="muted">Access your personalized learning dashboard and track your progress.</p>
-      <form class="form" id="loginForm">
-        <label>Email
-          <input type="email" class="input" placeholder="you@example.com" required />
-        </label>
-        <label>Password
-          <input type="password" class="input" placeholder="••••••••" required />
-        </label>
-        <button class="btn btn--primary w-100" type="submit">Login</button>
-        <button class="btn btn--ghost w-100 mt-8" type="button">Create Account</button>
-      </form>
-    </div>
-  </div>
-  <div class="modal__backdrop" id="loginBackdrop"></div>
+    <!-- Overview Section -->
+    <section class="overview">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose DpsQuant?</h2>
+            </div>
+            <div class="overview-grid">
+                <div class="overview-card animate-slide-left">
+                    <div class="card-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Expert Faculty</h3>
+                    <p>Learn from experienced trainers with proven track records in campus recruitment. Our faculty brings real industry insights and practical knowledge.</p>
+                </div>
+                <div class="overview-card animate-slide-up">
+                    <div class="card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Personalized Coaching</h3>
+                    <p>Small batch sizes ensure individual attention. Get personalized guidance, doubt-clearing sessions, and one-on-one mentoring throughout your preparation.</p>
+                </div>
+                <div class="overview-card animate-slide-right">
+                    <div class="card-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Proven Success Rate</h3>
+                    <p>Join thousands of successful students who secured placements in top companies. Our structured CRT programs deliver results you can count on.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <script src="js/lms.js"></script>
+    <!-- CRT Features Section -->
+    <section id="features" class="why-choose-us">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Training Approach</h2>
+            </div>
+            <div class="why-choose-grid">
+                <div class="why-choose-item animate-fade-in">
+                    <div class="item-icon">
+                        <i class="fas fa-chalkboard"></i>
+                    </div>
+                    <div class="item-content">
+                        <h3>Classroom Training</h3>
+                        <p>Interactive classroom sessions with experienced faculty, live demonstrations, and hands-on practice to ensure complete understanding of concepts.</p>
+                    </div>
+                </div>
+                <div class="why-choose-item animate-fade-in-delay">
+                    <div class="item-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <div class="item-content">
+                        <h3>Mock Interviews</h3>
+                        <p>Regular mock interview sessions with detailed feedback, company-specific preparation, and personality development training.</p>
+                    </div>
+                </div>
+                <div class="why-choose-item animate-fade-in-delay-2">
+                    <div class="item-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="item-content">
+                        <h3>Placement Support</h3>
+                        <p>End-to-end placement assistance including resume building, job referrals, interview preparation, and career counseling.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Brochure Section -->
+    <section id="courses" class="sets-apart" style="margin-bottom: 120px;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Course Catalog</h2>
+                <p class="section-description" style="color: white !important;">Comprehensive courses designed to prepare you for success in today's competitive job market.</p>
+            </div>
+            <div class="sets-apart-grid">
+                <div class="apart-item animate-slide-left">
+                    <div class="item-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Programming Fundamentals</h3>
+                    <p>Master the basics of programming with our comprehensive courses covering C, Java, Python, and web development technologies.</p>
+                    <div class="service-details">
+                        <ul>
+                            <li>Data Structures & Algorithms</li>
+                            <li>Object-Oriented Programming</li>
+                            <li>Database Management</li>
+                            <li>Version Control with Git</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="apart-item animate-slide-right">
+                    <div class="item-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Aptitude & Reasoning</h3>
+                    <p>Sharpen your logical thinking and problem-solving skills with our specialized aptitude training programs.</p>
+                    <div class="service-details">
+                        <ul>
+                            <li>Quantitative Aptitude</li>
+                            <li>Logical Reasoning</li>
+                            <li>Verbal Ability</li>
+                            <li>Practice Tests & Mock Exams</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="apart-item animate-slide-left">
+                    <div class="item-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Communication Skills</h3>
+                    <p>Develop essential soft skills for professional success including presentation skills, interview preparation, and workplace communication.</p>
+                    <div class="service-details">
+                        <ul>
+                            <li>Public Speaking</li>
+                            <li>Interview Techniques</li>
+                            <li>Group Discussion</li>
+                            <li>Resume Building</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="apart-item animate-slide-right">
+                    <div class="item-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Placement Preparation</h3>
+                    <p>Complete placement training with company-specific preparation, mock interviews, and career counseling.</p>
+                    <div class="service-details">
+                        <ul>
+                            <li>Company-wise Preparation</li>
+                            <li>Mock Interviews</li>
+                            <li>Technical Assessment</li>
+                            <li>Career Guidance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item animate-slide-up">
+                    <div class="stat-number" data-target="1000">0</div>
+                    <div class="stat-label">Active Learners</div>
+                </div>
+                <div class="stat-item animate-slide-up-delay">
+                    <div class="stat-number" data-target="50">0</div>
+                    <div class="stat-label">Expert Instructors</div>
+                </div>
+                <div class="stat-item animate-slide-up-delay-2">
+                    <div class="stat-number" data-target="95">0</div>
+                    <div class="stat-label">Success Rate</div>
+                </div>
+                <div class="stat-item animate-slide-up-delay-3">
+                    <div class="stat-number" data-target="25">0</div>
+                    <div class="stat-label">Courses Available</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Success Stories</h2>
+                <p class="section-description">Hear from our students who achieved their career goals through our CRT training.</p>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-card animate-slide-up">
+                    <div class="testimonial-content">
+                        <p>"The personalized coaching and mock interviews at DpsQuant were game-changers. The faculty's guidance helped me crack multiple interviews and secure a position at Infosys!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Priya Sharma</h4>
+                            <span>Software Developer at Infosys</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card animate-slide-up-delay">
+                    <div class="testimonial-content">
+                        <p>"The classroom training was exceptional. Regular doubt-clearing sessions and aptitude practice helped me clear TCS placement process with confidence."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Rahul Kumar</h4>
+                            <span>Data Analyst at TCS</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card animate-slide-up-delay-2">
+                    <div class="testimonial-content">
+                        <p>"The communication skills training and personality development sessions transformed me. I can now confidently face interviews and presentations. Got placed at Wipro!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Anjali Patel</h4>
+                            <span>Business Analyst at Wipro</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>DpsQuant Pvt Ltd</h3>
+                    <p>Empowering students with industry-ready skills for successful careers.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="lms.html">LMS</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-phone"></i> [Your Phone Number]</p>
+                    <p><i class="fas fa-envelope"></i> [Your Email Address]</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DpsQuant Pvt Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
