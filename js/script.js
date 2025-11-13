@@ -2,8 +2,25 @@
 const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.querySelector('.nav-menu');
 
-navToggle.addEventListener('click', () => {
+function toggleMenu() {
     navMenu.classList.toggle('active');
+}
+
+navToggle.addEventListener('click', toggleMenu);
+
+// Close menu when clicking on a nav link
+const navLinks = document.querySelectorAll('.nav-links a');
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+    });
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+        navMenu.classList.remove('active');
+    }
 });
 
 // Navbar Scroll Effect
