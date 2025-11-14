@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>DpsQuant: CRT Training & Placements for College Students</title>
+    <meta name="description" content="DpsQuant offers industry-led CRT training and placement programs for college students. Bridge the gap between academics and job-ready skills with our expert-led courses.">
+    <meta name="keywords" content="CRT training, campus recruitment training, placement, DpsQuant, job-ready skills, college students, technical training, aptitude, soft skills, Hyderabad, full stack, data science, AI, placements">
+    <meta property="og:title" content="DpsQuant: CRT Training & Placements for College Students">
+    <meta property="og:description" content="DpsQuant offers industry-led CRT training and placement programs for college students. Bridge the gap between academics and job-ready skills with our expert-led courses.">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="DpsQuant: CRT Training & Placements for College Students">
+    <meta name="twitter:description" content="DpsQuant offers industry-led CRT training and placement programs for college students. Bridge the gap between academics and job-ready skills with our expert-led courses.">
+    <meta name="twitter:image" content="logo.png">
+    <meta name="author" content="DpsQuant Pvt Ltd">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="logo.png">
+
+    <style>
+        /* --- Google Font Import --- */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        /* --- CSS Variables (Root) --- */
+        :root {
+          --font-primary: 'Poppins', sans-serif;
+          --color-dark: #0a0a23;         /* Very dark blue/black */
+          --color-primary: #1e1e3f;       /* Dark blue background */
+          --color-accent1: #00bfff;      /* Bright blue (DeepSkyBlue) */
+          --color-accent2: #8a2be2;      /* Tech purple (BlueViolet) */
+          --color-light: #f4f4f4;        /* Light grey/white text */
+          --color-grey: #aaa;
+          --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+          --section-padding: 5rem 2rem;
+        }
+
+        /* --- Global Reset & Base Styles --- */
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        html {
+          scroll-behavior: smooth;
+          font-size: 16px;
+        }
+
+        body {
+          font-family: var(--font-primary);
+          background: var(--color-dark);
+          color: var(--color-light);
+          line-height: 1.7;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+          font-weight: 600;
+          line-height: 1.3;
+          margin-bottom: 1rem;
+          color: var(--color-light);
+        }
+
+        h1 { font-size: 3rem; }
+        h2 { font-size: 2.5rem; color: var(--color-accent1); }
+        h3 { font-size: 1.8rem; }
+        h4 { font-size: 1.2rem; }
+
+        p {
+          margin-bottom: 1.5rem;
+          color: var(--color-grey);
+        }
+
+        a {
+          text-decoration: none;
+          color: var(--color-accent1);
+          transition: color 0.3s ease;
+        }
+
+        a:hover {
+          color: var(--color-accent2);
+        }
+
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+
+        /* --- Utility Classes --- */
+        .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 2rem;
+        }
+
+        .section {
+          padding: var(--section-padding);
+        }
+
+        .bg-dark { background: var(--color-dark); }
+        .bg-primary { background: var(--color-primary); }
+
+        .btn {
+          display: inline-block;
+          padding: 0.8rem 1.8rem;
+          border-radius: 50px;
+          font-weight: 600;
+          transition: all 0.3s ease;
+          border: 2px solid transparent;
+        }
+
+        .btn-primary {
+          background: var(--color-accent1);
+          color: var(--color-dark);
+          border-color: var(--color-accent1);
+        }
+
+        .btn-primary:hover {
+          background: transparent;
+          color: var(--color-accent1);
+        }
+
+        .btn-secondary {
+          background: transparent;
+          color: var(--color-light);
+          border-color: var(--color-light);
+        }
+
+        .btn-secondary:hover {
+          background: var(--color-light);
+          color: var(--color-dark);
+        }
+
+        /* --- Header & Navigation --- */
+        .header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          padding: 1.5rem 0;
+          background: rgba(10, 10, 35, 0.85); /* Semi-transparent dark */
+          backdrop-filter: blur(10px);
+          z-index: 1000;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header .container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .logo {
+          font-size: 1.8rem;
+          font-weight: 700;
+          color: var(--color-light);
+        }
+
+        .logo span {
+          color: var(--color-accent1);
+        }
+
+        .nav-links {
+          list-style: none;
+          display: flex;
+        }
+
+        .nav-links li {
+          margin-left: 2rem;
+        }
+
+        .nav-links a {
+          font-weight: 600;
+          color: var(--color-light);
+        }
+
+        .nav-links a.active,
+        .nav-links a:hover {
+          color: var(--color-accent1);
+          padding-bottom: 5px;
+          border-bottom: 2px solid var(--color-accent1);
+        }
+
+        .hamburger {
+          display: none;
+          cursor: pointer;
+          flex-direction: column;
+          gap: 5px;
+        }
+
+        .hamburger div {
+          width: 25px;
+          height: 3px;
+          background: var(--color-light);
+          transition: all 0.3s ease;
+        }
+
+        /* --- Hero Section (Homepage) --- */
+        .hero {
+          height: 100vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          position: relative;
+          background: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+          background-attachment: fixed; /* Parallax effect */
+          padding-top: 80px; /* Header offset */
+        }
+
+        .hero::before { /* Overlay */
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(10, 10, 35, 0.8); /* Dark overlay */
+        }
+
+        .hero-content {
+          position: relative;
+          z-index: 2;
+          max-width: 800px;
+        }
+
+        .hero-content h1 {
+          font-size: 3.5rem;
+          margin-bottom: 1rem;
+        }
+
+        .hero-content h1 span {
+          color: var(--color-accent1);
+          display: block;
+        }
+
+        .hero-content .subheadline {
+          font-size: 1.2rem;
+          color: var(--color-light);
+          margin-bottom: 2rem;
+        }
+
+        .hero .btn {
+          margin: 0 0.5rem;
+        }
+
+        /* --- Stats Bar Section --- */
+        .stats-bar {
+          background: linear-gradient(90deg, var(--color-accent1), var(--color-accent2));
+          padding: 2.5rem 2rem;
+          text-align: center;
+          box-shadow: var(--shadow);
+        }
+
+        .stats-bar h3 {
+          color: var(--color-dark);
+          font-size: 2rem;
+          font-weight: 700;
+          margin: 0;
+        }
+        
+        /* --- Parallax Background Utility --- */
+        .bg-parallax {
+          position: relative;
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-attachment: fixed;
+        }
+        .bg-parallax::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(10, 10, 35, 0.9); /* Dark overlay */
+          z-index: 1;
+        }
+        .bg-parallax .container { /* Ensure content is on top */
+          position: relative;
+          z-index: 2;
+        }
+
+        /* --- Card Grids --- */
+        .card-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 2rem;
+          margin-top: 3rem;
+        }
+
+        /* --- Standard Card (for "Why Choose Us") --- */
+        .card {
+          background: var(--color-primary);
+          border-radius: 10px;
+          padding: 2rem;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          box-shadow: var(--shadow);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 15px 40px rgba(0, 191, 255, 0.2);
+        }
+
+        .card h4 {
+          color: var(--color-accent1);
+          margin-bottom: 0.5rem;
+        }
+        
+        /* --- NEW: Image Card Styles (for "Key Highlights") --- */
+        .image-card {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden; /* Ensures overlay respects border radius */
+            padding: 2rem;
+            min-height: 300px; /* Give it some height */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; /* Aligns text to the bottom */
+            background-size: cover;
+            background-position: center;
+            border: none;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-card::before { /* Dark overlay */
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.8) 100%);
+            z-index: 1;
+            transition: background 0.3s ease;
+        }
+
+        .image-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 191, 255, 0.2);
+        }
+
+        .image-card:hover::before {
+            background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.9) 100%);
+        }
+
+        .image-card h4,
+        .image-card p {
+            position: relative;
+            z-index: 2;
+            color: var(--color-light); /* Make text light */
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .image-card h4 {
+            color: var(--color-accent1); /* Keep heading accent color */
+            font-size: 1.5rem;
+        }
+
+        .image-card p {
+            color: var(--color-light); /* Override default grey paragraph */
+            margin-bottom: 0;
+        }
+        
+        /* --- FAQ Section Styles --- */
+        .faq-container {
+          max-width: 800px;
+          margin: 3rem auto 0;
+        }
+        .faq-item {
+          background: var(--color-primary);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 8px;
+          margin-bottom: 1rem;
+          overflow: hidden; /* For smooth animation */
+        }
+        .faq-item summary {
+          font-size: 1.2rem;
+          font-weight: 600;
+          padding: 1.5rem;
+          cursor: pointer;
+          outline: none;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          list-style: none; /* Remove default marker */
+        }
+        .faq-item summary::-webkit-details-marker {
+          display: none; /* Hide Safari marker */
+        }
+        .faq-item summary::after { /* Custom dropdown arrow */
+          content: '+';
+          font-size: 1.8rem;
+          color: var(--color-accent1);
+          transition: transform 0.3s ease;
+        }
+        .faq-item[open] summary {
+          color: var(--color-accent1);
+        }
+        .faq-item[open] summary::after {
+          transform: rotate(45deg);
+          content: '×'; /* Change to 'x' on open */
+        }
+        .faq-content {
+          padding: 0 1.5rem 1.5rem;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .faq-content p {
+          margin-bottom: 0;
+        }
+
+
+        /* --- Footer --- */
+        .footer {
+          background: var(--color-primary);
+          padding: 4rem 2rem 2rem;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+          text-align: center;
+        }
+
+        .footer-content {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 2rem;
+          text-align: left;
+          margin-bottom: 3rem;
+        }
+
+        .footer-content h4 {
+          color: var(--color-accent1);
+          margin-bottom: 1rem;
+        }
+
+        .footer-content p, .footer-content a {
+          color: var(--color-grey);
+          margin-bottom: 0.5rem;
+        }
+
+        .social-links a {
+          font-size: 1.5rem;
+          margin-right: 1rem;
+        }
+
+        .footer-bottom {
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+          padding-top: 2rem;
+          font-size: 0.9rem;
+          color: var(--color-grey);
+        }
+
+        /* --- Scroll Animation Classes --- */
+        .reveal {
+          opacity: 0;
+          transition: all 1s ease-out;
+        }
+
+        .reveal-fade {
+          transform: translateY(50px);
+        }
+
+        .reveal-left {
+          transform: translateX(-100px);
+        }
+        .reveal-right {
+          transform: translateX(100px);
+        }
+
+        .reveal.show {
+          opacity: 1;
+          transform: none;
+        }
+
+        /* --- Responsive Styles --- */
+        @media (max-width: 992px) {
+          h1 { font-size: 2.5rem; }
+          .hero-content h1 { font-size: 3rem; }
+          h2 { font-size: 2rem; }
+        }
+
+        @media (max-width: 768px) {
+          .nav-links {
+            position: fixed;
+            top: 80px; /* Header height */
+            right: 0;
+            width: 70%;
+            height: calc(100vh - 80px);
+            background: var(--color-primary);
+            flex-direction: column;
+            align-items: center;
+            padding-top: 3rem;
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+          }
+
+          .nav-links.nav-active {
+            transform: translateX(0);
+          }
+
+          .nav-links li {
+            margin: 1.5rem 0;
+          }
+
+          .hamburger {
+            display: flex;
+          }
+
+          /* Hamburger 'X' animation */
+          .hamburger.toggle .line1 {
+            transform: rotate(-45deg) translate(-5px, 6px);
+          }
+          .hamburger.toggle .line2 {
+            opacity: 0;
+          }
+          .hamburger.toggle .line3 {
+            transform: rotate(45deg) translate(-5px, -6px);
+          }
+
+          .hero { height: auto; padding: 10rem 0 5rem 0; }
+          .hero-content h1 { font-size: 2.5rem; }
+          
+          .stats-bar h3 { font-size: 1.5rem; }
+          
+          .footer-content {
+              grid-template-columns: 1fr;
+              text-align: center;
+          }
+          .social-links { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">Dps<span>Quant</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="lms.html">LMS</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content reveal reveal-fade">
+            <h1>Kickstart Your Career with <span>DpsQuant Pvt Ltd</span></h1>
+            <p class="subheadline">
+                Industry-led training programs designed for college
+                students to bridge the gap between academics and job-ready skills.
+            </p>
+            <a href="programs.html" class="btn btn-primary">Explore Our Programs</a>
+            <a href="contact.html" class="btn btn-secondary">Get Started</a>
+        </div>
+    </section>
+
+    <section class="stats-bar reveal reveal-fade">
+        <div class="container">
+            <h3>Over 500+ Students Placed in the Last 90 Days!</h3>
+        </div>
+    </section>
+
+    <section class="section bg-dark">
+        <div class="container">
+            <div class="reveal reveal-left">
+                <h2>Empowering College Students with Industry-Ready Skills</h2>
+                <p>
+                    At DpsQuant, we specialize in providing comprehensive
+                    training programs focused on the latest technologies, problem-solving
+                    strategies, and essential soft skills. Our goal is to ensure students are not
+                    just academically strong, but also prepared for the dynamic and fast-paced
+                    professional world. We focus on hands-on project knowledge and industry-level training, tuning students with the best faculty.
+                </p>
+            </div>
+            
+            <div class="card-grid">
+                <div class="image-card reveal reveal-fade" style="background-image: url('https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                    <h4>Industry-Relevant Training</h4>
+                    <p>We stay ahead of industry trends to provide students with the most up-to-date skill sets in tech.</p>
+                </div>
+                <div class="image-card reveal reveal-fade" style="transition-delay: 0.2s; background-image: url('https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                    <h4>Personalized Learning Paths</h4>
+                    <p>Our programs are tailored to suit your specific career ambitions, from tech to communication.</p>
+                </div>
+                <div class="image-card reveal reveal-fade" style="transition-delay: 0.4s; background-image: url('https://images.unsplash.com/photo-1571260899304-425eee4c7efc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                    <h4>Placements & Certifications</h4>
+                    <p>Earn certifications recognized by top companies and get 100% placement assistance.</p>
+                </div>
+            </div>
+            </div>
+    </section>
+
+    <section class="section bg-parallax" style="background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80');">
+        <div class="container">
+            <h2 class="reveal reveal-fade">Why Choose Us?</h2>
+            <div class="card-grid">
+                <div class="card reveal reveal-left">
+                    <h4>Expert Trainers</h4>
+                    <p>Learn from professionals with hands-on experience in the industry. Our trainers bring years of real-world expertise to the table.</p>
+                </div>
+                <div class="card reveal reveal-fade" style="transition-delay: 0.2s;">
+                    <h4>Practical Skills</h4>
+                    <p>We focus on practical, hands-on training. Work on live projects that mirror industry scenarios and get the experience you need.</p>
+                </div>
+                <div class="card reveal reveal-right" style="transition-delay: 0.4s;">
+                    <h4>Job-Ready Focus</h4>
+                    <p>Our programs are designed to make you job-ready. We equip you with problem-solving abilities, technical know-how, and soft skills needed to thrive.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-dark">
+        <div class="container">
+            <h2 class="reveal reveal-fade" style="text-align: center;">Frequently Asked Questions</h2>
+            <div class="faq-container reveal reveal-fade">
+                
+                <details class="faq-item">
+                    <summary>What is Campus Recruitment Training (CRT)?</summary>
+                    <div class="faq-content">
+                        <p>Campus Recruitment Training (CRT) is a specialized program designed to prepare pre-final and final year college students for the entire campus placement process. It covers technical skills, aptitude (quantitative and logical reasoning), verbal ability, and soft skills (like resume writing, group discussions, and interview techniques).</p>
+                    </div>
+                </details>
+                
+                <details class="faq-item">
+                    <summary>How many students have you placed?</summary>
+                    <div class="faq-content">
+                        <p>We have a strong and proven track record of success. In the last 90 days alone, we are proud to have placed over 500 students in various IT and core sectors. Our focus on hands-on knowledge and industry-level training is the key to this success.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Are your trainers experienced?</summary>
+                    <div class="faq-content">
+                        <p>Absolutely. Our trainers are not just academics; they are industry professionals with years of real-world experience. They bring practical insights and up-to-date knowledge from the field, ensuring you learn what companies are actually looking for.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Do I get a certification after completing a course?</summary>
+                    <div class="faq-content">
+                        <p>Yes, upon successful completion of our programs, you will receive a certification from DpsQuant Pvt Ltd. These certifications are recognized by our network of partner companies and add significant value to your resume.</p>
+                    </div>
+                </details>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <a href="index.html" class="logo">Dps<span>Quant</span></a>
+                    <p>Empowering College Students with Industry-Ready Skills.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="about.html">About Us</a><br>
+                    <a href="services.html">Services</a><br>
+                    <a href="programs.html">Programs</a><br>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <p>D.No.9-14/3, Plot No.15, Peerzadiguda, Hyderabad, 500039</p>
+                    <p><a href="tel:+919989839898">+91 99898 39898</a></p>
+                    <p><a href="mailto:info@dpsquant.com">info@dpsquant.com</a></p>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#">Facebook</a>
+                        <a href="#">LinkedIn</a>
+                        <a href="#">Instagram</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 DpsQuant Pvt Ltd. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+          // --- Mobile Navigation Toggle ---
+          const hamburger = document.querySelector('.hamburger');
+          const navLinks = document.querySelector('.nav-links');
+
+          if (hamburger) {
+            hamburger.addEventListener('click', () => {
+              navLinks.classList.toggle('nav-active');
+              hamburger.classList.toggle('toggle');
+            });
+          }
+
+          // --- Scroll Animation Logic (IntersectionObserver) ---
+          const revealElements = document.querySelectorAll('.reveal');
+
+          const observerOptions = {
+            root: null, // observes intersections relative to the viewport
+            rootMargin: '0px',
+            threshold: 0.1 // 10% of the element is visible
+          };
+
+          const observerCallback = (entries, observer) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+                // Stop observing the element once it's visible
+                observer.unobserve(entry.target);
+              }
+            });
+          };
+
+          const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+          revealElements.forEach(el => {
+            observer.observe(el);
+          });
+
+          // --- Active Nav Link Highlighter ---
+          const currentLocation = 'index.html'; // Manually set for this page
+          const navLinksAll = document.querySelectorAll('.nav-links a');
+
+          navLinksAll.forEach(link => {
+            const linkPage = link.getAttribute('href').split('/').pop();
+            if (linkPage === currentLocation || (currentLocation === 'index.html' && linkPage === '')) {
+              link.classList.add('active');
+            }
+          });
+
+        });
+    </script>
+</body>
+</html>

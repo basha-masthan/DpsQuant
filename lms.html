@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>LMS - Our Courses & Programs - DpsQuant Pvt Ltd</title>
+    <meta name="description" content="Explore the tech courses and CRT programs at DpsQuant, including Full Stack, AI, Data Science, Cybersecurity, Cloud Computing, and more.">
+    <meta name="keywords" content="LMS, DpsQuant courses, Full Stack, AI, Data Science, Cybersecurity, Cloud Computing, DevOps, CRT program, online learning, tech courses, placement training">
+    <meta property="og:title" content="LMS - Our Courses & Programs - DpsQuant Pvt Ltd">
+    <meta property="og:description" content="Explore the tech courses and CRT programs at DpsQuant, including Full Stack, AI, Data Science, Cybersecurity, Cloud Computing, and more.">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="LMS - Our Courses & Programs - DpsQuant Pvt Ltd">
+    <meta name="twitter:description" content="Explore the tech courses and CRT programs at DpsQuant, including Full Stack, AI, Data Science, Cybersecurity, Cloud Computing, and more.">
+    <meta name="twitter:image" content="logo.png">
+    <meta name="author" content="DpsQuant Pvt Ltd">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="logo.png">
+
+    <style>
+        /* --- Google Font Import --- */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        /* --- CSS Variables (Root) --- */
+        :root {
+          --font-primary: 'Poppins', sans-serif;
+          --color-dark: #0a0a23;         /* Very dark blue/black */
+          --color-primary: #1e1e3f;       /* Dark blue background */
+          --color-accent1: #00bfff;      /* Bright blue (DeepSkyBlue) */
+          --color-accent2: #8a2be2;      /* Tech purple (BlueViolet) */
+          --color-light: #f4f4f4;        /* Light grey/white text */
+          --color-grey: #aaa;
+          --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+          --section-padding: 5rem 2rem;
+        }
+
+        /* --- Global Reset & Base Styles --- */
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        html {
+          scroll-behavior: smooth;
+          font-size: 16px;
+        }
+
+        body {
+          font-family: var(--font-primary);
+          background: var(--color-dark);
+          color: var(--color-light);
+          line-height: 1.7;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+          font-weight: 600;
+          line-height: 1.3;
+          margin-bottom: 1rem;
+          color: var(--color-light);
+        }
+
+        h1 { font-size: 3rem; }
+        h2 { font-size: 2.5rem; color: var(--color-accent1); }
+        h3 { font-size: 1.8rem; }
+        h4 { font-size: 1.2rem; }
+
+        p {
+          margin-bottom: 1.5rem;
+          color: var(--color-grey);
+        }
+
+        a {
+          text-decoration: none;
+          color: var(--color-accent1);
+          transition: color 0.3s ease;
+        }
+
+        a:hover {
+          color: var(--color-accent2);
+        }
+
+        /* --- Utility Classes --- */
+        .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 2rem;
+        }
+
+        .section {
+          padding: var(--section-padding);
+        }
+
+        .bg-dark { background: var(--color-dark); }
+        .bg-primary { background: var(--color-primary); }
+
+        .btn {
+          display: inline-block;
+          padding: 0.8rem 1.8rem;
+          border-radius: 50px;
+          font-weight: 600;
+          transition: all 0.3s ease;
+          border: 2px solid transparent;
+          margin-top: 1rem;
+        }
+        
+        /* --- Header & Navigation --- */
+        .header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          padding: 1.5rem 0;
+          background: rgba(10, 10, 35, 0.85); /* Semi-transparent dark */
+          backdrop-filter: blur(10px);
+          z-index: 1000;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header .container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .logo {
+          font-size: 1.8rem;
+          font-weight: 700;
+          color: var(--color-light);
+        }
+
+        .logo span {
+          color: var(--color-accent1);
+        }
+
+        .nav-links {
+          list-style: none;
+          display: flex;
+        }
+
+        .nav-links li {
+          margin-left: 2rem;
+        }
+
+        .nav-links a {
+          font-weight: 600;
+          color: var(--color-light);
+        }
+
+        .nav-links a.active,
+        .nav-links a:hover {
+          color: var(--color-accent1);
+          padding-bottom: 5px;
+          border-bottom: 2px solid var(--color-accent1);
+        }
+
+        .hamburger {
+          display: none;
+          cursor: pointer;
+          flex-direction: column;
+          gap: 5px;
+        }
+
+        .hamburger div {
+          width: 25px;
+          height: 3px;
+          background: var(--color-light);
+          transition: all 0.3s ease;
+        }
+        
+        /* --- Generic Page Header --- */
+        .page-header {
+          height: 40vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          position: relative;
+          background: linear-gradient(rgba(10, 10, 35, 0.85), rgba(10, 10, 35, 0.85)),
+                      var(--color-primary);
+          padding-top: 80px; /* Header offset */
+        }
+        
+        .page-header h1 {
+          position: relative;
+          z-index: 2;
+          color: var(--color-light);
+          border-bottom: 4px solid var(--color-accent1);
+          padding-bottom: 0.5rem;
+        }
+
+        /* --- Grid Layouts (for both card types) --- */
+        .course-grid, .card-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 2rem;
+          margin-top: 3rem;
+        }
+
+        /* --- NEW: Course Card (WITH Background Image) --- */
+        .course-card {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            padding: 2rem;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; /* Aligns text to the bottom */
+            background-size: cover;
+            background-position: center;
+            border: none;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .course-card::before { /* Dark gradient overlay */
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.85) 100%);
+            z-index: 1;
+            transition: background 0.3s ease;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 191, 255, 0.2);
+        }
+        
+        .course-card:hover::before {
+            background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.95) 100%);
+        }
+
+        .course-card h4,
+        .course-card p {
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .course-card h4 {
+            font-size: 1.5rem;
+            color: var(--color-accent1);
+        }
+
+        .course-card p {
+            color: var(--color-light);
+            margin-bottom: 0;
+            font-size: 0.9rem;
+        }
+        /* --- End of Course Card Style --- */
+        
+        
+        /* --- Standard Card (for CRT mini-cards) --- */
+        .card {
+          background: var(--color-primary);
+          border-radius: 10px;
+          padding: 2.5rem;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          box-shadow: var(--shadow);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 15px 40px rgba(0, 191, 255, 0.2);
+        }
+
+        .card h4 {
+          color: var(--color-accent1);
+          margin-bottom: 0.5rem;
+        }
+        /* --- End of Standard Card Style --- */
+        
+        
+        /* --- Footer --- */
+        .footer {
+          background: var(--color-primary);
+          padding: 4rem 2rem 2rem;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+          text-align: center;
+        }
+
+        .footer-content {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 2rem;
+          text-align: left;
+          margin-bottom: 3rem;
+        }
+
+        .footer-content h4 {
+          color: var(--color-accent1);
+          margin-bottom: 1rem;
+        }
+
+        .footer-content p, .footer-content a {
+          color: var(--color-grey);
+          margin-bottom: 0.5rem;
+        }
+
+        .social-links a {
+          font-size: 1.5rem;
+          margin-right: 1rem;
+        }
+
+        .footer-bottom {
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+          padding-top: 2rem;
+          font-size: 0.9rem;
+          color: var(--color-grey);
+        }
+
+        /* --- Scroll Animation Classes --- */
+        .reveal {
+          opacity: 0;
+          transition: all 1s ease-out;
+        }
+
+        .reveal-fade {
+          transform: translateY(50px);
+        }
+
+        .reveal-left {
+          transform: translateX(-100px);
+        }
+
+        .reveal-right {
+          transform: translateX(100px);
+        }
+
+        .reveal.show {
+          opacity: 1;
+          transform: none;
+        }
+
+        /* --- Responsive Styles --- */
+        @media (max-width: 992px) {
+          h1 { font-size: 2.5rem; }
+          h2 { font-size: 2rem; }
+        }
+
+        @media (max-width: 768px) {
+          .nav-links {
+            position: fixed;
+            top: 80px; /* Header height */
+            right: 0;
+            width: 70%;
+            height: calc(100vh - 80px);
+            background: var(--color-primary);
+            flex-direction: column;
+            align-items: center;
+            padding-top: 3rem;
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+          }
+
+          .nav-links.nav-active {
+            transform: translateX(0);
+          }
+
+          .nav-links li {
+            margin: 1.5rem 0;
+          }
+
+          .hamburger {
+            display: flex;
+          }
+
+          /* Hamburger 'X' animation */
+          .hamburger.toggle .line1 {
+            transform: rotate(-45deg) translate(-5px, 6px);
+          }
+          .hamburger.toggle .line2 {
+            opacity: 0;
+          }
+          .hamburger.toggle .line3 {
+            transform: rotate(45deg) translate(-5px, -6px);
+          }
+          
+          .page-header { height: 30vh; }
+          
+          .footer-content {
+              grid-template-columns: 1fr;
+              text-align: center;
+          }
+          .social-links { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">Dps<span>Quant</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="lms.html">LMS</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <h1>Our Learning Programs</h1>
+    </section>
+
+    <section class="section bg-dark">
+        <div class="container">
+            <h2 class="reveal reveal-fade">Our Courses</h2>
+            <p class="reveal reveal-fade">Explore our flagship, industry-focused programs designed to make you a job-ready professional.</p>
+
+            <div class="course-grid">
+                <div class="course-card reveal reveal-fade" style="background-image: url('https://www.nicepng.com/png/detail/249-2496315_full-stack-development.png');">
+                    <h4>Full Stack Development</h4>
+                    <p>Master front-end and back-end technologies (MERN Stack).</p>
+                </div>
+                <div class="course-card reveal reveal-fade" style="transition-delay: 0.1s; background-image: url('https://media.licdn.com/dms/image/v2/D4E12AQFUwkBTsI21CA/article-cover_image-shrink_600_2000/B4EZodVhFLKsAU-/0/1761428773614?e=2147483647&v=beta&t=FrbuNQEJdZ_rIfy8HGjXG1uCvNWmK0AJp32WOHUKFjg');">
+                    <h4>AI & Data Science</h4>
+                    <p>Unlock the power of data with Python, ML, and Deep Learning.</p>
+                </div>
+                <div class="course-card reveal reveal-fade" style="transition-delay: 0.2s; background-image: url('https://media.istockphoto.com/id/2180548732/photo/digital-security-concept-digital-shield-firewall-with-central-computer-processor-and.jpg?s=612x612&w=0&k=20&c=7CRxHZWCXS4j5qeL4zSTyL0GIcKusih--QZzhiKn8ds=');">
+                    <h4>Cybersecurity</h4>
+                    <p>Learn to protect networks and systems with ethical hacking.</p>
+                </div>
+                <div class="course-card reveal reveal-fade" style="transition-delay: 0.3s; background-image: url('https://media.istockphoto.com/id/1318623693/photo/cloud-computing.jpg?s=612x612&w=0&k=20&c=GIgvKe92Oh6ZvTkRxTg7hNZSXjf3_0fNIyiak4gVUgg=');">
+                    <h4>Cloud Computing</h4>
+                    <p>Become an expert in cloud platforms like AWS, Azure, and GCP.</p>
+                </div>
+                <div class="course-card reveal reveal-fade" style="transition-delay: 0.4s; background-image: url('https://static.vecteezy.com/system/resources/thumbnails/003/250/944/small/team-of-programmer-concept-with-devops-software-development-free-vector.jpg');">
+                    <h4>DevOps</h4>
+                    <p>Master the tools for continuous integration and delivery (CI/CD).</p>
+                </div>
+                <div class="course-card reveal reveal-fade" style="transition-delay: 0.5s; background-image: url('https://media2.dev.to/dynamic/image/width=1280,height=720,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2Fsrnvrd7vfeeq5qpxnabq.png');">
+                    <h4>Data Structures & Algorithms</h4>
+                    <p>Build a strong foundation for all technical interviews.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section bg-primary">
+        <div class="container">
+            <h2 class="reveal reveal-fade">CRT Essentials</h2>
+            <p class="reveal reveal-fade">Our Campus Recruitment Training focuses on four key pillars for placement success.</p>
+
+            <div class="card-grid">
+                <div class="card reveal reveal-fade">
+                    <h4>Technical Skills</h4>
+                    <p>Core concepts, programming, DSA, and problem-solving for interviews.</p>
+                </div>
+                <div class="card reveal reveal-fade" style="transition-delay: 0.1s;">
+                    <h4>Aptitude Training</h4>
+                    <p>Quantitative, logical reasoning, and speed math techniques.</p>
+                </div>
+                <div class="card reveal reveal-fade" style="transition-delay: 0.2s;">
+                    <h4>Verbal Ability</h4>
+                    <p>Grammar, vocabulary, and reading comprehension for written tests.</p>
+                </div>
+                <div class="card reveal reveal-fade" style="transition-delay: 0.3s;">
+                    <h4>Soft Skills & Interview Prep</h4>
+                    <p>Resume building, group discussions, and mock HR/technical interviews.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <a href="index.html" class="logo">Dps<span>Quant</span></a>
+                    <p>Empowering College Students with Industry-Ready Skills.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="about.html">About Us</a><br>
+                    <a href="programs.html">Programs</a><br>
+                    <a href="lms.html">LMS</a><br>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <p>D.No.9-14/3, Plot No.15, Peerzadiguda, Hyderabad, 500039</p>
+                    <p><a href="tel:+919989839898">+91 99898 39898</a></p>
+                    <p><a href="mailto:info@dpsquant.com">info@dpsquant.com</a></p>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#">Facebook</a>
+                        <a href="#">LinkedIn</a>
+                        <a href="#">Instagram</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 DpsQuant Pvt Ltd. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+          // --- Mobile Navigation Toggle ---
+          const hamburger = document.querySelector('.hamburger');
+          const navLinks = document.querySelector('.nav-links');
+
+          if (hamburger) {
+            hamburger.addEventListener('click', () => {
+              navLinks.classList.toggle('nav-active');
+              hamburger.classList.toggle('toggle');
+            });
+          }
+
+          // --- Scroll Animation Logic (IntersectionObserver) ---
+          const revealElements = document.querySelectorAll('.reveal');
+
+          const observerOptions = {
+            root: null, // observes intersections relative to the viewport
+            rootMargin: '0px',
+            threshold: 0.1 // 10% of the element is visible
+          };
+
+          const observerCallback = (entries, observer) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+                // Stop observing the element once it's visible
+                observer.unobserve(entry.target);
+              }
+            });
+          };
+
+          const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+          revealElements.forEach(el => {
+            observer.observe(el);
+          });
+
+          // --- Active Nav Link Highlighter ---
+          const currentLocation = 'lms.html'; // Manually set for this page
+          const navLinksAll = document.querySelectorAll('.nav-links a');
+
+          navLinksAll.forEach(link => {
+            const linkPage = link.getAttribute('href').split('/').pop();
+            if (linkPage === currentLocation) {
+              link.classList.add('active');
+            }
+          });
+
+        });
+    </script>
+</body>
+</html>
