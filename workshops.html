@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Our Programs & Services - DpsQuant CRT and Training</title>
-    <meta name="description" content="Discover all programs and services at DpsQuant, from our structured 4-year CRT program to skill courses, internships, and workshops.">
-    <meta name="keywords" content="DpsQuant programs, DpsQuant services, CRT program, 4-year CRT plan, what we offer, skill-oriented courses, internships, academic training, placement training">
-    <meta property="og:title" content="Our Programs & Services - DpsQuant CRT and Training">
-    <meta property="og:description" content="Discover all programs and services at DpsQuant, from our structured 4-year CRT program to skill courses, internships, and workshops.">
+    <title>Workshops - DpsQuant Pvt Ltd</title>
+    <meta name="description" content="Detailed information about Workshops at DpsQuant, offering focused training on specific topics.">
+    <meta name="keywords" content="workshops, focused training, DpsQuant, skill development, coding, communication">
+    <meta property="og:title" content="Workshops - DpsQuant Pvt Ltd">
+    <meta property="og:description" content="Detailed information about Workshops at DpsQuant, offering focused training on specific topics.">
     <meta property="og:image" content="logo1.png">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Our Programs & Services - DpsQuant CRT and Training">
-    <meta name="twitter:description" content="Discover all programs and services at DpsQuant, from our structured 4-year CRT program to skill courses, internships, and workshops.">
+    <meta name="twitter:title" content="Workshops - DpsQuant Pvt Ltd">
+    <meta name="twitter:description" content="Detailed information about Workshops at DpsQuant, offering focused training on specific topics.">
     <meta name="twitter:image" content="logo1.png">
     <meta name="author" content="DpsQuant Pvt Ltd">
     <meta name="robots" content="index, follow">
@@ -232,113 +232,6 @@
           padding-bottom: 0.5rem;
         }
 
-        /* --- Card Grid Layout --- */
-        .card-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: 2rem;
-          margin-top: 3rem;
-        }
-        
-        /* --- Service Card (Image + Content) --- */
-        .service-card {
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden; /* Ensures overlay respects border radius */
-            padding: 2rem;
-            min-height: 350px; /* Give it some height */
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end; /* Aligns text to the bottom */
-            background-size: cover;
-            background-position: center;
-            border: none;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .service-card::before { /* Dark gradient overlay */
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.85) 100%);
-            z-index: 1;
-            transition: background 0.3s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 191, 255, 0.2);
-        }
-
-        .service-card:hover::before {
-            background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.95) 100%);
-        }
-
-        .service-card h4,
-        .service-card p {
-            position: relative;
-            z-index: 2;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .service-card h4 {
-            color: var(--color-accent1); /* Keep heading accent color */
-            font-size: 1.5rem;
-        }
-
-        .service-card p {
-            color: var(--color-light); /* Override default grey paragraph */
-            margin-bottom: 0;
-        }
-
-        .card-link {
-            display: block;
-            text-decoration: none;
-            color: inherit;
-            cursor: pointer;
-        }
-
-        /* --- Programs Page: Table --- */
-        .table-container {
-          overflow-x: auto;
-          margin-top: 3rem;
-          background: var(--color-primary);
-          border-radius: 8px;
-          box-shadow: var(--shadow);
-        }
-
-        .programs-table {
-          width: 100%;
-          min-width: 800px; /* Ensure horizontal scroll on small screens */
-          border-collapse: collapse;
-          text-align: left;
-        }
-
-        .programs-table th,
-        .programs-table td {
-          padding: 1rem 1.5rem;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .programs-table th {
-          background: var(--color-accent2);
-          color: var(--color-light);
-          font-size: 1rem;
-          text-transform: uppercase;
-        }
-
-        .programs-table tr:last-child td {
-          border-bottom: none;
-        }
-
-        .programs-table tr:nth-child(even) {
-          background: rgba(0, 0, 0, 0.2);
-        }
-
         /* --- Footer --- */
         .footer {
           background: var(--color-primary);
@@ -477,130 +370,41 @@
     </header>
 
     <section class="page-header">
-        <h1>Our Programs & Services</h1>
+        <h1>Workshops</h1>
     </section>
 
     <section class="section bg-dark">
         <div class="container">
-            <div class="reveal reveal-fade" style="text-align: center; max-width: 700px; margin: 0 auto 3rem auto;">
-                <h2>Training for Every Need</h2>
-                <p>
-                    At DpsQuant Pvt Ltd, we offer a variety of services to help
-                    students and professionals enhance their skills, gain real-world experience,
-                    and prepare for successful careers.
-                </p>
-            </div>
-            
-            <div class="card-grid">
-                <a href="crt-training.html" class="card-link">
-                <div class="service-card reveal reveal-fade" style="background-image: url('https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
-                    <h4>CRT Training</h4>
-                    <p>Specialized training for campus recruitment, covering Technical, Aptitude, Verbal, and Soft Skills.</p>
-                </div>
-                </a>
-                <a href="academic-training.html" class="card-link">
-                <div class="service-card reveal reveal-fade" style="transition-delay: 0.1s; background-image: url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
-                    <h4>Academic Training</h4>
-                    <p>Programs designed to strengthen your academic foundation and performance in core subjects.</p>
-                </div>
-                </a>
-                <a href="skill-courses.html" class="card-link">
-                <div class="service-card reveal reveal-fade" style="transition-delay: 0.2s; background-image: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
-                    <h4>Skill-Oriented Courses</h4>
-                    <p>Get job-ready with practical courses in Programming, Data Science, Digital Marketing, and more.</p>
-                </div>
-                </a>
-                <a href="internships.html" class="card-link">
-                <div class="service-card reveal reveal-fade" style="transition-delay: 0.3s; background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
-                    <h4>Internships</h4>
-                    <p>Gain real-world experience and build your network through our internship placement programs.</p>
-                </div>
-                </a>
-                <a href="certification-courses.html" class="card-link">
-                <div class="service-card reveal reveal-fade" style="transition-delay: 0.4s; background-image: url('https://images.unsplash.com/photo-1571260899304-425eee4c7efc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
-                    <h4>Certification Courses</h4>
-                    <p>Enhance your qualifications with industry-recognized certifications that give you an edge.</p>
-                </div>
-                </a>
-                <a href="workshops.html" class="card-link">
-                <div class="service-card reveal reveal-fade" style="transition-delay: 0.5s; background-image: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
-                    <h4>Workshops</h4>
-                    <p>Dive deep into specific topics like Coding, Communication Skills, and Resume Writing.</p>
-                </div>
-                </a>
-            </div>
-        </div>
-    </section>
+            <h2 class="reveal reveal-fade">What are Workshops?</h2>
+            <p class="reveal reveal-fade">
+                Workshops are intensive, interactive training sessions designed to provide deep, hands-on learning experiences in specific topics or skills. These focused programs typically span from a few hours to several days and emphasize practical application over theoretical knowledge. Our workshops cover diverse areas including coding bootcamps, communication skills development, resume writing and interview preparation, digital marketing strategies, data analysis techniques, and leadership training. Unlike longer courses, workshops are designed for immediate skill acquisition and application, making them ideal for professionals seeking targeted improvement or students preparing for specific challenges. The interactive format includes demonstrations, exercises, group activities, and real-time feedback from expert facilitators.
+            </p>
+            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Workshops Session" style="width: 100%; max-width: 600px; margin: 2rem auto; display: block; border-radius: 10px;">
 
-    <section class="section bg-primary">
-        <div class="container reveal reveal-fade">
-            <h2>A Structured Path to Success</h2>
-            <p>Our flagship CRT program is structured year-by-year to build a strong foundation and advance your skills progressively, ensuring you are company-ready by your final year.</p>
+            <h2 class="reveal reveal-fade">Why are Workshops Important?</h2>
+            <p class="reveal reveal-fade">
+                In a fast-paced professional environment, workshops have become essential for continuous skill development and career advancement. They are important because they provide concentrated learning experiences that deliver immediate value and practical results. Unlike traditional training programs that may take months, workshops offer targeted skill enhancement in short timeframes, making them accessible for busy professionals. The interactive nature of workshops ensures better retention and application of learned concepts. Research shows that workshop participants demonstrate 25% higher skill improvement compared to passive learning methods. They address specific skill gaps quickly and effectively, helping individuals stay competitive in their fields. Workshops also foster networking and collaboration, creating communities of practice that extend beyond the session itself.
+            </p>
 
-            <div class="table-container reveal reveal-fade" style="transition-delay: 0.2s;">
-                <table class="programs-table">
-                    <thead>
-                        <tr>
-                            <th>Year</th>
-                            <th>Semester</th>
-                            <th>Technical Skills</th>
-                            <th>Aptitude</th>
-                            <th>Soft Skills</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1st Year</td>
-                            <td>Semester 1</td>
-                            <td>C Programming</td>
-                            <td>Basic Aptitude (Logical, Math)</td>
-                            <td>Communication, Teamwork, Professional Skills</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Semester 2</td>
-                            <td>Data Structures using C</td>
-                            <td>Advanced Aptitude (Reasoning, Speed Math)</td>
-                            <td>Confidence Building, Leadership, Professional Communication</td>
-                        </tr>
-                        <tr>
-                            <td>2nd Year</td>
-                            <td>Semester 1</td>
-                            <td>Java</td>
-                            <td>Advanced Aptitude (Reasoning, Speed Math)</td>
-                            <td>Confidence Building, Leadership, Professional Communication</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Semester 2</td>
-                            <td>Python</td>
-                            <td>Advanced Aptitude (Reasoning, Speed Math)</td>
-                            <td>Interview Skills, Professional Communication</td>
-                        </tr>
-                        <tr>
-                            <td>3rd Year</td>
-                            <td>Semester 1</td>
-                            <td>Python DSA / Java DSA</td>
-                            <td>Aptitude for Competitive Exams</td>
-                            <td>Time Management, Decision Making, Interview Skills</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Semester 2</td>
-                            <td>Full Stack Development</td>
-                            <td>Aptitude for Competitive Exams</td>
-                            <td>Interview Skills, Professional Communication</td>
-                        </tr>
-                        <tr>
-                            <td>4th Year</td>
-                            <td>All</td>
-                            <td>Company-Specific Training</td>
-                            <td>Advanced Aptitude (Speed and Accuracy)</td>
-                            <td>Resume Writing, Interview Preparation, Business Communication</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <h2 class="reveal reveal-fade">Uses of Workshops</h2>
+            <p class="reveal reveal-fade">
+                Workshops serve diverse purposes across educational and professional contexts. Organizations use them for team building, skill development, and change management initiatives. Individuals leverage workshops to acquire new competencies or refresh existing skills. Educational institutions incorporate workshops to supplement curriculum and provide practical training. Companies conduct workshops for onboarding new employees or preparing teams for new projects. Workshops are particularly effective for addressing specific challenges like improving presentation skills, mastering new software tools, or developing leadership capabilities. They provide hands-on experience in controlled environments, allowing participants to practice and receive immediate feedback. Workshops also serve as platforms for knowledge sharing and innovation, bringing together experts and practitioners to solve real-world problems.
+            </p>
+
+            <h2 class="reveal reveal-fade">Future Prospects</h2>
+            <p class="reveal reveal-fade">
+                The future prospects for workshop participants are enhanced through targeted skill development and practical experience. Workshops provide immediate competitive advantages in specific areas of expertise. Participants often see rapid career progression as they apply newly acquired skills in their professional roles. The networking opportunities created during workshops lead to ongoing professional relationships and opportunities. Many workshop graduates become recognized experts in their specialized areas. The focused nature of workshops allows for deeper mastery of specific skills, making participants valuable assets in their organizations. In an era of specialization, workshop-trained individuals are better positioned for niche roles and consulting opportunities. The skills gained often lead to higher earning potential and increased job security.
+            </p>
+
+            <h2 class="reveal reveal-fade">Benefits</h2>
+            <p class="reveal reveal-fade">
+                The benefits of workshops are immediate and multifaceted. Participants receive expert guidance from industry professionals and subject matter experts. The interactive format ensures active learning and better knowledge retention. Hands-on exercises provide practical experience that can be immediately applied. Workshops offer personalized attention in small group settings. Networking opportunities connect participants with peers and mentors. The focused approach allows for deep dives into specific topics without overwhelming content. Workshops often include take-home materials and resources for continued learning. They build confidence through skill demonstration and achievement. The collaborative environment fosters creativity and problem-solving abilities. Workshops also provide certificates of completion that enhance professional credentials.
+            </p>
+
+            <h2 class="reveal reveal-fade">Outcomes</h2>
+            <p class="reveal reveal-fade">
+                The outcomes of workshop participation are tangible and professionally valuable. Participants achieve specific skill mastery in targeted areas. Improved job performance through immediate application of learned concepts. Enhanced professional capabilities that lead to career advancement. Increased confidence in specialized areas of expertise. Better networking and professional connections. Many participants receive recognition for their improved skills. Workshops result in measurable improvements in work quality and efficiency. The collaborative learning experience often leads to innovative solutions and approaches. Long-term outcomes include continuous professional development and adaptability. Workshop alumni frequently become go-to experts in their organizations for specific skills and knowledge areas.
+            </p>
         </div>
     </section>
 
@@ -679,7 +483,7 @@
           });
 
           // --- Active Nav Link Highlighter ---
-          const currentLocation = 'programs.html'; // Manually set for this page
+          const currentLocation = 'workshops.html'; // Manually set for this page
           const navLinksAll = document.querySelectorAll('.nav-links a');
 
           navLinksAll.forEach(link => {
